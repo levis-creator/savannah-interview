@@ -1,0 +1,144 @@
+Photo Album App Documentation
+Table of Contents
+Introduction
+
+Features
+
+Installation
+
+Usage
+
+API Endpoints
+
+Configuration
+
+Troubleshooting
+
+Contributing
+
+License
+
+1. Introduction
+Photo Album App is a simple, user-friendly application designed to help users organize and share their photo albums effortlessly. This documentation provides a comprehensive guide to installing, configuring, and using the Photo Album App.
+
+2. Features
+Create Albums: Users can create new photo albums.
+
+Upload Photos: Add photos to albums from local storage or via URLs.
+
+Edit Photos: Edit photo details and organize them within albums.
+
+Share Albums: Share albums with friends and family via unique links.
+
+API Integration: Provides endpoints to interact with the app programmatically.
+
+3. Installation
+To install and run the Photo Album App locally, follow these steps:
+
+Prerequisites
+Node.js
+
+npm
+
+Steps
+Clone the repository:
+
+sh
+git clone https://github.com/your-username/photo-album-app.git
+cd photo-album-app
+Install dependencies:
+
+sh
+npm install
+Start the application:
+
+sh
+npm start
+Access the application at http://localhost:3000.
+
+4. Usage
+Creating an Album
+Click on the "Create Album" button on the dashboard.
+
+Enter a name and description for your album.
+
+Click "Save" to create the album.
+
+Uploading Photos
+Open an album.
+
+Click on the "Upload Photos" button.
+
+Select photos from your local storage or enter photo URLs.
+
+Click "Upload" to add photos to the album.
+
+5. API Endpoints
+Below are the key API endpoints provided by the Photo Album App:
+
+Create an Album
+Endpoint: POST /api/albums
+
+Request Body:
+
+json
+{
+    "name": "Vacation 2024",
+    "description": "Photos from my vacation in 2024"
+}
+Response:
+
+json
+{
+    "id": 1,
+    "name": "Vacation 2024",
+    "description": "Photos from my vacation in 2024",
+    "photos": []
+}
+Upload a Photo
+Endpoint: POST /api/albums/{albumId}/photos
+
+Request Body:
+
+json
+{
+    "url": "https://example.com/photo.jpg",
+    "description": "A beautiful sunset"
+}
+Response:
+
+json
+{
+    "id": 1,
+    "url": "https://example.com/photo.jpg",
+    "description": "A beautiful sunset",
+    "albumId": 1
+}
+6. Configuration
+Configure the application by modifying the config.json file in the root directory:
+
+json
+{
+    "database": {
+        "host": "localhost",
+        "port": 5432,
+        "username": "user",
+        "password": "password",
+        "database": "photo_album"
+    },
+    "server": {
+        "port": 3000
+    }
+}
+7. Troubleshooting
+Common issues and solutions:
+
+Cannot Connect to Database: Ensure database credentials in config.json are correct.
+
+Photos Not Uploading: Check if the file size and format are supported.
+
+8. Contributing
+We welcome contributions! Please read our contributing guidelines for details on our code of conduct and the process for submitting pull requests.
+
+9. License
+This project is licensed under the MIT License - see the LICENSE file for details.

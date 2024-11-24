@@ -1,3 +1,6 @@
+
+import NavBar from "@/components/nav-bar";
+import ContextProvider from "@/context/ContextProvider";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -24,11 +27,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="light">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-gray-950 dark:text-white`}
       >
-        {children}
+        <ContextProvider>
+          <header>
+            <NavBar />
+          </header>
+
+          {children}
+        </ContextProvider>
       </body>
     </html>
   );
