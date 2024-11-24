@@ -2,10 +2,10 @@
 import { ThemeProvider } from "next-theme"
 import { ThemeProviderProps } from "next-theme/dist/provider/index.props"
 
-const ContextProvider = ({ children, ...props }: ThemeProviderProps) => {
+const ContextProvider = ({ children }: ThemeProviderProps) => {
     return (
         <>
-            <ThemeProvider >
+            <ThemeProvider defaultTheme="light">
                 {children}
             </ThemeProvider>
         </>

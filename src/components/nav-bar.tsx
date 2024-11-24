@@ -11,7 +11,7 @@ import { useRouter } from 'next/navigation';
 
 const NavBar = () => {
     const [toggleOpen, setToggleOpen] = useState<boolean>(false);
-    const [userMenu, setUserMenu]=useState<boolean>(false)
+    // const [userMenu, setUserMenu]=useState<boolean>(false)
     const [themeBtn, setThemeBtn]=useState<boolean>(false)
     const {setTheme}=useTheme();
     const router= useRouter()
