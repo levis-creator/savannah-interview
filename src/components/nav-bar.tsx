@@ -23,14 +23,14 @@ const NavBar = () => {
             $('#navbar-user').addClass("hidden")
         }
     }
-    const handleUserMenuBtn=()=>{
-        setUserMenu(!userMenu)
-        if(userMenu){
-            $('#user-dropdown').removeClass("hidden")
-        }else{
-            $('#user-dropdown').addClass("hidden")
-        }
-    }
+    // const handleUserMenuBtn=()=>{
+    //     setUserMenu(!userMenu)
+    //     if(userMenu){
+    //         $('#user-dropdown').removeClass("hidden")
+    //     }else{
+    //         $('#user-dropdown').addClass("hidden")
+    //     }
+    // }
     function handleChangeTheme() {
         
         setThemeBtn(!themeBtn)
