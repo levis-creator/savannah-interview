@@ -34,7 +34,7 @@ const AlbumImage = ({ src, alt, edit = false, data, className, i, ...props }: Al
         onError={handleError}
         {...props}
         unoptimized
-        priority={i < 5}
+        priority={i as number < 5}
       />
     </div>
   );
