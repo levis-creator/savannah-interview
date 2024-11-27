@@ -1,0 +1,69 @@
+name: CI/CD Pipeline
+
+# Trigger the workflow on push to main branch or pull request to main
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  # Job to run code quality checks
+  check_code_quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          # Example: Install Python dependencies for linting
+          pip install pylint
+      - name: Run code quality checks
+        run: pylint **/*.py  # Run pylint or your chosen linting tool
+
+  # Job to run unit tests
+  run_tests:
+    runs-on: ubuntu-latest
+    needs: check_code_quality  # Only runs if check_code_quality is successful
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt  # Install project dependencies
+      - name: Run unit tests
+        run: pytest tests/  # Run your tests using pytest or your test framework
+
+  # Job to build the project
+  build_project:
+    runs-on: ubuntu-latest
+    needs: run_tests  # Only runs if run_tests is successful
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build project
+        run: |
+          # Example: Build your project (e.g., compiling or packaging code)
+          ./build.sh  # Replace with your build command
+
+  # Job to deploy the project
+  deploy_project:
+    runs-on: ubuntu-latest
+    needs: build_project  # Only runs if build_project is successful
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Deploy to production
+        run: |
+          # Example: Deploy to production (e.g., using a script or Docker)
+          ./deploy.sh  # Replace with your deployment script
+      - name: Notify success
+        run: |
+          echo "Deployment successful!"  # Replace with your notification command
+
