@@ -1,3 +1,4 @@
+[todo: Delete avatar-react]
 Photo Album App Documentation
 Table of Contents
 Introduction
