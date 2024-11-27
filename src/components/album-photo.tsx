@@ -11,9 +11,10 @@ interface AlbumImageProps {
   edit?: boolean;
   data?: PhotoDto;
   className?: string;  // Add className as an optional prop
+  i?:number;
 }
 
-const AlbumImage = ({ src, alt, edit = false, data, className, ...props }: AlbumImageProps) => {
+const AlbumImage = ({ src, alt, edit = false, data, className, i, ...props }: AlbumImageProps) => {
   const [imgSrc, setImgSrc] = useState<string | StaticImageData>(src);
 
   const handleError = () => {
@@ -33,6 +34,7 @@ const AlbumImage = ({ src, alt, edit = false, data, className, ...props }: Album
         onError={handleError}
         {...props}
         unoptimized
+        priority={i < 5}
       />
     </div>
   );

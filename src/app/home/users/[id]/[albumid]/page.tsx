@@ -24,7 +24,7 @@ const Page = async ({
         {
           albumPhotos.map((data, i) => (
             <div key={i}>
-              <AlbumImage data={data} edit className="rounded-t-lg w-full h-56 object-cover" src={data.url} key={i} alt={data.title} priority={i < 5} />
+              <AlbumImage i={i} data={data} edit className="rounded-t-lg w-full h-56 object-cover" src={data.url} key={i} alt={data.title}  />
             </div>
           ))
         }
