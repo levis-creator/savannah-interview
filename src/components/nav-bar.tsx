@@ -1,6 +1,5 @@
 'use client'
 import logo from "@/assets/logo.png";
-import $ from 'jquery';
 import useTheme from 'next-theme';
 import Image from 'next/image';
 import Link from 'next/link';

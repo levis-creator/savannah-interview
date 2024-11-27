@@ -2,7 +2,7 @@ import { apiUrl } from "@/lib/apiUrl";
 import { fetchData } from "@/lib/fetchData";
 import { NextResponse } from "next/server";
 const url= `${apiUrl}/albums`
-export async function GET(request: Request) {
+export async function GET() {
   try {
     const data = await fetchData(url, 'GET');  // Call fetchData without explicit type, since it is unknown
     return NextResponse.json(data);  // Return the data as JSON response

@@ -5,7 +5,15 @@ import { useState } from 'react';
 import EditModal from './edit-modal';
 import { PhotoDto } from '@/lib/types';
 
-const AlbumImage = ({ src, alt, edit = false, data, ...props }: { src: string; alt: string; edit: boolean; data?: PhotoDto }) => {
+interface AlbumImageProps {
+  src: string;
+  alt: string;
+  edit?: boolean;
+  data?: PhotoDto;
+  className?: string;  // Add className as an optional prop
+}
+
+const AlbumImage = ({ src, alt, edit = false, data, className, ...props }: AlbumImageProps) => {
   const [imgSrc, setImgSrc] = useState<string | StaticImageData>(src);
 
   const handleError = () => {
@@ -13,12 +21,10 @@ const AlbumImage = ({ src, alt, edit = false, data, ...props }: { src: string; a
   };
 
   return (
-    <div className="relative group">
-      {
-        edit && (
-         <EditModal data={data as PhotoDto}/>
-        )
-      }
+    <div className={`relative group ${className || ''}`}> {/* Apply className to the wrapper div */}
+      {edit && (
+        <EditModal data={data as PhotoDto} />
+      )}
       <Image
         src={imgSrc}
         alt={alt}
@@ -32,4 +38,4 @@ const AlbumImage = ({ src, alt, edit = false, data, ...props }: { src: string; a
   );
 }
 
-export default AlbumImage
+export default AlbumImage;

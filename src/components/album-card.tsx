@@ -1,4 +1,3 @@
-import placeholder from '@/assets/placeholder.jpg'
 import { AlbumDto } from '@/lib/types'
 import { ArrowDownRight } from 'react-feather'
 import AlbumImage from './album-photo'
@@ -9,7 +8,7 @@ const AlbumCard = ({data, href}:{data:AlbumDto, href:string}) => {
     
 <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     <a href="#">
-        <AlbumImage className="rounded-t-lg w-full h-56 object-cover" src={data.featuredPhoto} unoptimized alt="" />
+        <AlbumImage className="rounded-t-lg w-full h-56 object-cover" src={data.featuredPhoto} alt="" />
     </a>
     <div className="p-5">
         <a href="#">
