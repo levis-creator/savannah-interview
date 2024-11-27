@@ -9,7 +9,7 @@
 export async function fetchData(
     url: string,
     method: 'GET' | 'POST' | 'PUT' | 'DELETE' = 'GET',
-    params: Record<string, any> = {},
+    params: Record<string, unknown> = {},
     headers: Record<string, string> = {}
   ): Promise<unknown> {
     const options: RequestInit = {
