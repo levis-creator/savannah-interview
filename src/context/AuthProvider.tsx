@@ -1,9 +1,9 @@
 "use client"
-import { Session } from "next-auth";
-import { useSession } from "next-auth/react";
+import { Session } from "next-auth"
+import { useSession } from "next-auth/react"
 import { useRouter } from "next/navigation";
 
-import { createContext, ReactNode, useEffect } from "react";
+import { createContext, ReactNode, useEffect, useState } from "react"
 
 interface AuthHooks{
     session?:Session|null;
@@ -13,12 +13,9 @@ const AuthProvider = ({children}:{
     children:ReactNode
 }) => {
     const {data: session}=useSession()
+    const [isLogin, setIsLogin]=useState(false)
     const router=useRouter();
-   useEffect(()=>{
-    if(session==null){
-      router.push("/")
-    }
-   },[session, router])
+  
   return (
     <AuthContext.Provider value={{session}}>
         {children}
