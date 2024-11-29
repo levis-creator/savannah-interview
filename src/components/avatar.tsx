@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { Session } from 'next-auth'
 import { signOut } from 'next-auth/react'
+import Link from 'next/link';
 
 interface AvatarProps {
   data: Session
@@ -48,7 +49,7 @@ const AvatarCust = ({ data }: AvatarProps) => {
 
           <ul className="py-2" aria-labelledby="user-menu-button">
             <li>
-              <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+              <Link href="/home" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</Link>
             </li>
             <li>
               <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
