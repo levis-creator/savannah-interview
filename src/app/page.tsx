@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -9,7 +10,7 @@ export default function Page() {
             Your platform for exploring user-generated content—users, albums, and photos—all in one place.
           </p>
           <div>
-            <a href="#" className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gray-100">Get Started</a>
+            <Link href="/login" className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gray-100">Get Started</Link>
             <a href="#features" className="ml-4 bg-transparent border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-blue-600">Learn More</a>
           </div>
         </div>
