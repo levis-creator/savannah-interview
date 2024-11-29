@@ -22,7 +22,7 @@ export default function Page() {
           <h2 className="text-3xl font-bold text-center mb-10">Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-            <div className="bg-white shadow-lg rounded-lg p-6 text-center">
+            <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 text-center">
               <div className="mb-4">
                 <svg className="w-16 h-16 mx-auto text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2m8-4a4 4 0 110-8 4 4 0 010 8z"></path></svg>
               </div>
@@ -30,7 +30,7 @@ export default function Page() {
               <p className="text-gray-600">Discover user details and see their album summaries with ease.</p>
             </div>
 
-            <div className="bg-white shadow-lg rounded-lg p-6 text-center">
+            <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 text-center">
               <div className="mb-4">
                 <svg className="w-16 h-16 mx-auto text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16h16M4 12h8m-8 4h16m-2 0a9 9 0 110-18 9 9 0 010 18z"></path></svg>
               </div>
@@ -38,7 +38,7 @@ export default function Page() {
               <p className="text-gray-600">Browse photos and update their details quickly and efficiently.</p>
             </div>
 
-            <div className="bg-white shadow-lg rounded-lg p-6 text-center">
+            <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 text-center">
               <div className="mb-4">
                 <svg className="w-16 h-16 mx-auto text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 6.75a6 6 0 11-3.1 11.392M3 9h18"></path></svg>
               </div>
