@@ -1,9 +1,8 @@
 "use client"
-import { Session } from "next-auth"
-import { useSession } from "next-auth/react"
-import { useRouter } from "next/navigation";
+import { Session } from "next-auth";
+import { useSession } from "next-auth/react";
 
-import { createContext, ReactNode, useEffect, useState } from "react"
+import { createContext, ReactNode } from "react";
 
 interface AuthHooks{
     session?:Session|null;
