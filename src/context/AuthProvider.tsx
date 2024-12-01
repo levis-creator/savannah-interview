@@ -13,9 +13,6 @@ const AuthProvider = ({children}:{
     children:ReactNode
 }) => {
     const {data: session}=useSession()
-    const [isLogin, setIsLogin]=useState(false)
-    const router=useRouter();
-  
   return (
     <AuthContext.Provider value={{session}}>
         {children}
